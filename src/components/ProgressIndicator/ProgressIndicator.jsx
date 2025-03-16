@@ -1,5 +1,5 @@
 function ProgressIndicator() {
-  return <div className={'App'}>P</div>;
+  return <div>P</div>;
 }
 
 export default ProgressIndicator;

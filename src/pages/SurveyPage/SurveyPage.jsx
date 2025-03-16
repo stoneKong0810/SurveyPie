@@ -13,7 +13,6 @@ function SurveyPage() {
   const params = useParams();
 
   const steps = parseInt(params.step);
-
   return (
     <>
       <ProgressIndicator />

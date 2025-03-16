@@ -12,6 +12,7 @@ function QuestionBox({ question, steps, questionsLength, answer, setAnswer }) {
         formType={question.type}
         answer={answer}
         setAnswer={setAnswer}
+        options={question.options}
       />
       <ActionButtons steps={steps} questionsLength={questionsLength} />
     </div>
