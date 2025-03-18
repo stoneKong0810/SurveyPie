@@ -14,7 +14,7 @@ function QuestionBox() {
   return (
     <QuestionBoxWrapper>
       <Title>{question.title}</Title>
-      <Description>{question.description}</Description>
+      <Description>{question.desc}</Description>
       <SurveyForm
         formType={question.type}
         answer={answer}

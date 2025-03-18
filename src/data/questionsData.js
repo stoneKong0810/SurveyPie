@@ -1,7 +1,7 @@
 const questionsData = [
   {
     title: '1번 질문 입니다.',
-    description: '1번 설명입니다.',
+    desc: '1번 설명입니다.',
     type: 'text',
     required: false,
     options: {
@@ -10,7 +10,7 @@ const questionsData = [
   },
   {
     title: '2번 질문 입니다.',
-    description: '2번 설명입니다.',
+    desc: '2번 설명입니다.',
     type: 'textarea',
     required: true,
     options: {
@@ -19,7 +19,7 @@ const questionsData = [
   },
   {
     title: '3번 질문 입니다.',
-    description: '3번 설명입니다.',
+    desc: '3번 설명입니다.',
     type: 'select',
     required: true,
     options: {
