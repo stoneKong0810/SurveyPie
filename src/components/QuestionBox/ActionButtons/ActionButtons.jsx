@@ -3,7 +3,7 @@ import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 
 import useStep from '../../../hooks/useStep';
-import questionsLengthSelector from '../../../stores/questions/qustionsLengthSelector';
+import questionsLengthSelector from '../../../stores/survey/qustionsLengthSelector';
 import Button from './Button/Button';
 
 function ActionButtons() {
