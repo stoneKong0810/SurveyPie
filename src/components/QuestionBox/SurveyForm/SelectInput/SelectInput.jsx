@@ -3,6 +3,12 @@ import styled from 'styled-components';
 function SelectInput({ answer = [], setAnswer, options }) {
   const handleChange = (isChecked, idx) => {
     if (isChecked) {
+      const max = options?.max || 1;
+
+      if (answer.length >= max) {
+        return;
+      }
+
       setAnswer([...answer, idx]);
     } else {
       setAnswer(answer.filter((item) => item !== idx));
@@ -15,6 +21,7 @@ function SelectInput({ answer = [], setAnswer, options }) {
         return (
           <Item
             key={idx}
+            checked={answer.includes(idx)}
             onChange={(e) => {
               handleChange(e.target.checked, idx);
             }}
@@ -27,11 +34,11 @@ function SelectInput({ answer = [], setAnswer, options }) {
   );
 }
 
-function Item({ children, onChange }) {
+function Item({ children, onChange, checked }) {
   return (
     <ItemWrapper>
       <label>
-        <input type={'checkbox'} onChange={onChange} />
+        <input type={'checkbox'} checked={checked} onChange={onChange} />
         <span />
         <div>{children}</div>
       </label>

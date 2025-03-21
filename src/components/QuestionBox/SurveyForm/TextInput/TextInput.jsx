@@ -7,6 +7,7 @@ function TextInput({ answer = '', setAnswer, options }) {
       value={answer}
       placeholder={options.placeholder}
       onChange={(e) => setAnswer(e.target.value)}
+      {...(options?.max && { maxLength: options?.max })}
     />
   );
 }
