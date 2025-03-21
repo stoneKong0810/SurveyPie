@@ -43,6 +43,10 @@ const MidText = styled.div`
 const ReloadButton = styled(Button)`
     display: inline-flex;
     align-items: center;: 10 px;
+
+    img {
+        margin-right: 10px;
+    }
 `;
 
 export default CompletionPage;
