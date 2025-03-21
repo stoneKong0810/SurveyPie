@@ -22,7 +22,7 @@ function ActionButtons() {
     <ActionButtonsWrapper>
       {steps === 0 || (
         <Button
-          type={'TERTIARY'}
+          type={'SECONDARY'}
           onClick={() => {
             navigate(`${steps - 1}`);
           }}
@@ -35,7 +35,7 @@ function ActionButtons() {
           type={'PRIMARY'}
           onClick={() => {
             postAnswers(surveyId, answers);
-            navigate('/done');
+            navigate(`/done/${surveyId}`);
           }}
         >
           제출
