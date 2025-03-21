@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
@@ -15,6 +16,7 @@ function ActionButtons() {
   const navigate = useNavigate();
   const surveyId = useSurveyId();
   const answers = useAnswers();
+  const [isPosting, setIsPosting] = useState(false);
 
   const isLast = questionsLength - 1 === steps;
 
@@ -34,11 +36,19 @@ function ActionButtons() {
         <Button
           type={'PRIMARY'}
           onClick={() => {
-            postAnswers(surveyId, answers);
-            navigate(`/done/${surveyId}`);
+            setIsPosting(true);
+            postAnswers(surveyId, answers)
+              .then(() => {
+                navigate(`/done/${surveyId}`);
+              })
+              .catch(() => {
+                alert('에러가 발생하였습니다. 다시 시도해주세요.');
+                setIsPosting(false);
+              });
           }}
+          disabled={isPosting}
         >
-          제출
+          {isPosting ? '제출 중입니다...' : '제출'}
         </Button>
       ) : (
         <Button
