@@ -1,9 +1,9 @@
-import { useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 
 import answersAtom from '../stores/answers/answersAtom';
 
 function useAnswers() {
-  return useRecoilValue(answersAtom);
+  return useRecoilState(answersAtom);
 }
 
 export default useAnswers;
